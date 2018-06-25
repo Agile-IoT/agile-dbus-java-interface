@@ -96,4 +96,19 @@ public interface ProtocolManager extends DBusInterface {
 
   }
 
+  /**
+   * Found device signal
+   * @author dp
+   *
+   */
+  public class FoundDeviceSignal extends DBusSignal {
+     public final DeviceOverview device;
+
+    public FoundDeviceSignal(String path, DeviceOverview device) throws DBusException {
+      super(path, device);
+       this.device = device;
+    }
+
+  }
+
 }
