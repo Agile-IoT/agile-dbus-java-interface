@@ -33,6 +33,9 @@ public  final class DeviceOverview extends Struct {
   @Position(3)
   @JsonProperty("status")
   public final String status;
+  @Position(4)
+  @JsonProperty("lastSeen")
+  public final String lastSeen;
 
   @JsonCreator
   public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status) {
@@ -40,6 +43,16 @@ public  final class DeviceOverview extends Struct {
     this.protocol= protocol;
     this.name = name;
     this.status = status;
+    this.lastSeen = "0";
+  }
+
+  @JsonCreator
+  public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status, @JsonProperty("lastSeen") String lastSeen) {
+    this.id = id;
+    this.protocol= protocol;
+    this.name = name;
+    this.status = status;
+    this.lastSeen = lastSeen;
   }
   
   public String getId() {
@@ -56,6 +69,9 @@ public  final class DeviceOverview extends Struct {
 
   public String getStatus() {
     return status;
+  }
+  public String getLastSeen() {
+    return lastSeen;
   }
 
 }
