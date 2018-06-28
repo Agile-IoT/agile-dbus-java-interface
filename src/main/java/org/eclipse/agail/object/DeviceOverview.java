@@ -37,14 +37,6 @@ public  final class DeviceOverview extends Struct {
   @JsonProperty("lastSeen")
   public final String lastSeen;
 
-  @JsonCreator
-  public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status) {
-    this.id = id;
-    this.protocol= protocol;
-    this.name = name;
-    this.status = status;
-    this.lastSeen = "0";
-  }
 
   @JsonCreator
   public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status, @JsonProperty("lastSeen") String lastSeen) {
