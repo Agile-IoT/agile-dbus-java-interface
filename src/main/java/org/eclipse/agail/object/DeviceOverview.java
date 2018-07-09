@@ -33,13 +33,17 @@ public  final class DeviceOverview extends Struct {
   @Position(3)
   @JsonProperty("status")
   public final String status;
+  @Position(4)
+  @JsonProperty("rssi")
+  public final String rssi;
 
   @JsonCreator
-  public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status) {
+  public DeviceOverview(@JsonProperty("id") String id, @JsonProperty("protocol") String protocol, @JsonProperty("name") String name, @JsonProperty("status") String status, @JsonProperty("rssi") String rssi) {
     this.id = id;
     this.protocol= protocol;
     this.name = name;
     this.status = status;
+    this.rssi = rssi;
   }
   
   public String getId() {
@@ -58,4 +62,7 @@ public  final class DeviceOverview extends Struct {
     return status;
   }
 
+  public String getRSSI()  {
+    return rssi;
+  }
 }
