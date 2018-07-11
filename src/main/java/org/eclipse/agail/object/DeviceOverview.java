@@ -45,7 +45,7 @@ public  final class DeviceOverview extends Struct {
     this.status = status;
     this.rssi = rssi;
   }
-  
+
   public String getId() {
     return id;
   }
